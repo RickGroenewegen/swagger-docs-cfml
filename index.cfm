@@ -9,7 +9,7 @@ if (StructKeyExists(URL, 'path')) {
 		swagger = {};
 		swagger['apiVersion'] = '0.1.0';
 		swagger['swaggerVersion'] = '1.2';
-		swagger['basePath'] = 'http://dev.psl.com.au/rest/api';
+		swagger['basePath'] = 'http://localhost/rest/api';
 
 		swagger['resourcePath'] = stResource.restpath;
 
@@ -22,11 +22,8 @@ if (StructKeyExists(URL, 'path')) {
 		for(stFunction in stResource.functions){
 			if (stFunction.access == 'remote') {
 
-
 				if (stAPI['path'] != stFunction.restpath) {
-		//WriteOutput('new path: #stFunction.restpath#<br />');
 					if ( stAPI['path'] != '') {
-		//WriteOutput('save<br />');
 						swagger['apis'].append(Duplicate(stAPI));
 					}
 					stAPI = {};
@@ -34,7 +31,6 @@ if (StructKeyExists(URL, 'path')) {
 					stAPI['authorizations'] = {"basicAuth":{"type":"basicAuth"}};
 					stAPI['operations'] = [];
 				}
-		//WriteOutput('new option: #stFunction.httpmethod#<br />');
 					stOperation = {};
 					stOperation['method'] = stFunction.httpmethod;
 					stOperation['summary'] = stFunction.description;
@@ -94,25 +90,15 @@ swagger = {};
 
 
 	swagger["info"] = {};
-	swagger["info"]["title"]             = "PSL API";
-	swagger["info"]["description"]       = "for Paterson's client applications";
-	swagger["info"]["termsOfServiceUrl"] = "http://www.psl.com.au";
-	swagger["info"]["contact"]           = "amercer@psl.com.au";
-	swagger["info"]["license"]           = "private license";
-	swagger["info"]["licenseUrl"]        = "http://www.psl.com.au";
+	swagger["info"]["title"]             = "API title";
+	swagger["info"]["description"]       = "API descriptions";
+	swagger["info"]["termsOfServiceUrl"] = "http://localhost";
+	swagger["info"]["contact"]           = "you@email.com";
+	swagger["info"]["license"]           = "license";
+	swagger["info"]["licenseUrl"]        = "http://localhost";
 
 	swagger['headers'] = GetHTTPRequestData().Headers;
-	//swagger['headers']['origin'] = GetPageContext().getRequest().getHeader('Origin');
-	//swagger['headers']['names'] = GetPageContext().getRequest().getHeaderNames();
-/*
-	mail subject="index.cfm" from="swagger@psl.com.au" to="amercer@psl.com.au"  {
 
-		mailpart type="html" {
-			writedump(swagger, true);
-			writedump(cgi, true);
-		};
-	};
-*/
 }
 </cfscript>
 
@@ -120,8 +106,6 @@ swagger = {};
 <cfcontent type="application/json" >
 <cfheader name="Access-Control-Allow-Origin" value="*">
 <cfheader name="access-control-origin"       value="*">
-<!--- <cfheader name="Access-Control-Allow-Origin" value="dev.psl.com.au">
-<cfheader name="Access-Control-Allow-Origin" value="services.dev.patersons.local"> --->
 <cfheader name="Access-Control-Allow-Headers" value="Content-Type, api_key, Authorization,accept,origin,token,ETag,X-Requested-With">
 <cfheader name="Access-Control-Allow-Methods" value="GET, POST, DELETE, PUT, PATCH, OPTIONS">
 <cfoutput>#serializeJSON(swagger)#</cfoutput>
