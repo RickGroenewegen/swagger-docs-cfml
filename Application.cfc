@@ -31,7 +31,7 @@ component accessors=true output=false persistent=false {
 			local.cfcPath = Replace(local.cfcPath, '/', '.', 'ALL');
 
 			local.stResource = getComponentMetadata(local.cfcPath);
-			//writedump(local.stResource);abort;
+
 			if ( local.stResource.rest) {
 				APPLICATION.stRestPath[local.stResource.restpath] = {};
 				APPLICATION.stRestPath[local.stResource.restpath]['cfcPath']= local.stResource.fullname;
@@ -44,13 +44,3 @@ component accessors=true output=false persistent=false {
 
 	}
 }
-
-/*
-	mail subject="Application.cfc - onregestStart" from="swagger@psl.com.au" to="amercer@psl.com.au"  {
-
-		mailpart type="html" {
-			writedump(request, true);
-			writedump(cgi, true);
-		};
-	};
-*/
