@@ -2,7 +2,8 @@ swagger-docs-cfml
 =================
 
 create swagger docs from CFML (Railo) ReST components
-*Work in Prgress*
+
+this is a *Work in Progress*
 
 This app will scan for ReST CFCs in given path and will dynamically create a swagger doc for each resource found
 
@@ -19,4 +20,6 @@ Instructions
 * Enter docs URL eg http://localhost/swagger/docs
 * Hopefully you can browser and try for ReST API
 
+Suggestions
+-----------
 I have just started messing around with swagger and knocked this a quickly. Please let me know if you have any suggestions
