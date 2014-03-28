@@ -23,3 +23,7 @@ Instructions
 Suggestions
 -----------
 I have just started messing around with swagger and knocked this a quickly. Please let me know if you have any suggestions
+
+To do
+-----
+* Add Basic Authentication
