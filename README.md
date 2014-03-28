@@ -16,6 +16,7 @@ Instructions
 * I put swagger-docs-cfm in subdirectory called 'docs'
 * Create Rewrite rule - ^/swagger/docs/(.+)$ /swagger/docs/index.cfm?path=/$1
 * Set path to your ReST components in Application.cfc setupApp()
+* Set swagger['basePath'] in index.cfm. and other swagger["info"] properties
 * Launch Swagger UI, eg http://localhost/swagger
 * Enter docs URL eg http://localhost/swagger/docs
 * Hopefully you can browser and try for ReST API
@@ -27,3 +28,4 @@ I have just started messing around with swagger and knocked this a quickly. Plea
 To do
 -----
 * Add Basic Authentication
+* config for baseURL and info properties
