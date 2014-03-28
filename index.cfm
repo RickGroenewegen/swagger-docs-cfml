@@ -97,7 +97,7 @@ swagger = {};
 	swagger["info"]["license"]           = "license";
 	swagger["info"]["licenseUrl"]        = "http://localhost";
 
-	swagger['headers'] = GetHTTPRequestData().Headers;
+	//swagger['headers'] = GetHTTPRequestData().Headers;
 
 }
 </cfscript>
