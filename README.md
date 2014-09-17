@@ -13,7 +13,7 @@ Get Swagger UI
 
 Instructions
 ------------
-* I put swagger-docs-cfm in subdirectory called 'docs' within the (swagger directory)
+* I put swagger-docs-cfm in subdirectory called 'docs' (within the swagger directory)
 * Create Rewrite rule - ^/swagger/docs/(.+)$ /swagger/docs/index.cfm?path=/$1
 * Set path to your ReST components in Application.cfc setupApp()
 * Set swagger['basePath'] in index.cfm. and other swagger["info"] properties
