@@ -3,7 +3,7 @@ swagger-docs-cfml
 
 create swagger docs from CFML (Railo) ReST components
 
-this is a *Work in Progress*
+this is a *Work in Progress - updating to Swagger 2.0*
 
 This app will scan for ReST CFCs in given path and will dynamically create a swagger doc for each resource found
 
